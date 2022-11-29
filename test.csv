@@ -126,184 +126,26 @@ It was customary for the men in the family to remain on Simon‚Äôs homestead,  Fi
 Simon would have regarded with impotent fury the disturbance between the North  and the South, as it left his descendants stripped of everything but their land, yet  the tradition of living on the land remained unbroken until well into the twentieth  century, when my father, Atticus Finch, went to Montgomery to read law, and his  younger brother went to Boston to study medicine. Their sister Alexandra was the  Finch who remained at the Landing: she married a taciturn man who spent most  of his time lying in a hammock by the river wondering if his trot-lines were full. When my father was admitted to the bar, he returned to Maycomb and began his  practice. Maycomb, some twenty miles east of Finch‚Äôs Landing, was the county 
 seat of Maycomb County. Atticus‚Äôs office in the courthouse contained little more  than a hat rack, a spittoon, a checkerboard and an unsullied Code of Alabama. His  first two clients were the last two persons hanged in the Maycomb County jail.  Atticus had urged them to accept the state‚Äôs generosity in allowing them to plead  Guilty to second-degree murder and escape with their lives, but they were  Haverfords, in Maycomb County a name synonymous with jackass. The  Haverfords had dispatched Maycomb‚Äôs leading blacksmith in a misunderstanding  arising from the alleged wrongful detention of a mare, were imprudent enough to  do it in the presence of three witnesses, and insisted that the-son-of-a-bitch-had-it coming-to-him was a good enough defense for anybody. They persisted in  pleading Not Guilty to first-degree murder, so there was nothing much Atticus  could do for his clients except be present at their departure, an occasion that was  probably the beginning of my father‚Äôs profound distaste for the practice of  criminal law. 
 "
-5,va,"To improve the compositionality of the semantic parser, VAPLs should be statically typed. They should include fine- grain domain-specific types and support definitions of cus- tom types. The ThinkTalk type system includes the standard types: strings, numbers, booleans, and enumerated types. It also has native support for common object types used in IoT devices and web services. Developers can also provide cus- tom entity types, which are internally represented as opaque identifiers but can be recalled by name in natural language. Arrays are the only compound type supported.
-To allow translation from natural language without con- textual information, the VAPL also needs a rich language for constants. For example, in ThingTalk, measures can be repre- sented with any legal unit, and can be composed additively (as in ‚Äú6 feet 3 inches‚Äù, which is translated to 6ft + 3in); this is necessary because a neural semantic parser cannot perform arithmetic to normalize the unit during the translation.
-Arguments such as numbers, dates and times, in the input sentence are identified and normalized using a rule-based algorithm [15]; they are replaced as named constants of the form ‚ÄúNUMBER_0‚Äù, ‚ÄúDATE_1‚Äù, etc. String and named entity parameters instead are represented using multiple tokens, one for each word in the string or entity name; this allows the words to be copied from the input sentence individually. Named entities are normalized with a knowledge base lookup after parsing.
-The skill library defines the virtual assistant‚Äôs knowledge of the Internet services and IoTs. As such, the design of the representation as well as how information is organized are very important. In the following, we describe a high-level change we made to the original ThingTalk, then present the new syntax of classes and the design rationale.
-Orthogonality in Function Types. In the original Thing- pedia library, there are three kinds of functions: triggers, retrievals, and actions [8]. Triggers are callbacks or polling functions that return results upon the arrival of some event, retrievals return results, actions create side effects. Unfortu- nately, the semantics of callbacks and queries are not easily discernible by consumers. It is hard for users to understand that ‚Äúwhen Trump tweets‚Äù and ‚Äúget a Trump tweet‚Äù refer to two different functions. Furthermore, when a device sup- ports only a trigger and not a retrieval, or vice versa, it is not apparent to the user which is allowed. The inconsistency in functionality makes getting correct training and evaluation data problematic.
-In the new ThingTalk, we collapse the distinction between triggers and retrievals into one class: queries, which can be monitored as an event or used to get data. The runtime en- sures that any supported retrieval can be monitored as events, and vice versa. Not only does this provide more functionality, it also makes the language more regular and hence simpler for the users, crowdsourced paraphrase providers, and the neural model.
-
-Skill Definition Syntax. For modularity, every VAPL should include a skill library, a set of classes representing the domains and operations supported. In ThingTalk, skills are IoT devices or web services. The formal grammar of ThingTalk classes is shown in Fig. 3.
-Classes have functions, belonging to one of two kinds: query functions retrieve data and have no side-effects; action functions have side-effects but do not return data.
-"
-6,ll,"The first Wednesday in every month was a Perfectly Awful Day--a day to
-be awaited with dread, endured with courage and forgotten with haste.
-Every floor must be spotless, every chair dustless, and every bed
-without a wrinkle.  Ninety-seven squirming little orphans must be
-scrubbed and combed and buttoned into freshly starched ginghams; and
-all ninety-seven reminded of their manners, and told to say, 'Yes,
-sir,' 'No, sir,' whenever a Trustee spoke.
-
-It was a distressing time; and poor Jerusha Abbott, being the oldest
-orphan, had to bear the brunt of it.  But this particular first
-Wednesday, like its predecessors, finally dragged itself to a close.
-Jerusha escaped from the pantry where she had been making sandwiches
-for the asylum's guests, and turned upstairs to accomplish her regular
-work.  Her special care was room F, where eleven little tots, from four
-to seven, occupied eleven little cots set in a row.  Jerusha assembled
-her charges, straightened their rumpled frocks, wiped their noses, and
-started them in an orderly and willing line towards the dining-room to
-engage themselves for a blessed half hour with bread and milk and prune
-pudding.
-
-Then she dropped down on the window seat and leaned throbbing temples
-against the cool glass.  She had been on her feet since five that
-morning, doing everybody's bidding, scolded and hurried by a nervous
-matron.  Mrs. Lippett, behind the scenes, did not always maintain that
-calm and pompous dignity with which she faced an audience of Trustees
-and lady visitors.  Jerusha gazed out across a broad stretch of frozen
-lawn, beyond the tall iron paling that marked the confines of the
-asylum, down undulating ridges sprinkled with country estates, to the
-spires of the village rising from the midst of bare trees.
-
-The day was ended--quite successfully, so far as she knew.  The
-Trustees and the visiting committee had made their rounds, and read
-their reports, and drunk their tea, and now were hurrying home to their
-own cheerful firesides, to forget their bothersome little charges for
-another month.  Jerusha leaned forward watching with curiosity--and a
-touch of wistfulness--the stream of carriages and automobiles that
-rolled out of the asylum gates.  In imagination she followed first one
-equipage, then another, to the big houses dotted along the hillside.
-She pictured herself in a fur coat and a velvet hat trimmed with
-feathers leaning back in the seat and nonchalantly murmuring 'Home' to
-the driver.  But on the door-sill of her home the picture grew blurred.
-
-Jerusha had an imagination--an imagination, Mrs. Lippett told her, that
-would get her into trouble if she didn't take care--but keen as it was,
-it could not carry her beyond the front porch of the houses she would
-enter.  Poor, eager, adventurous little Jerusha, in all her seventeen
-years, had never stepped inside an ordinary house; she could not
-picture the daily routine of those other human beings who carried on
-their lives undiscommoded by orphans.
-"
-7,sp,"Thou see'st these lovers seek a place to fight:
-Hie therefore, Robin, overcast the night;
-The starry welkin cover thou anon
-With drooping fog as black as Acheron,
-And lead these testy rivals so astray
-As one come not within another's way.
-Like to Lysander sometime frame thy tongue,
-Then stir Demetrius up with bitter wrong;
-And sometime rail thou like Demetrius;
-And from each other look thou lead them thus,
-Till o'er their brows death-counterfeiting sleep
-With leaden legs and batty wings doth creep:
-Then crush this herb into Lysander's eye;
-Whose liquor hath this virtuous property,
-To take from thence all error with his might,
-And make his eyeballs roll with wonted sight.
-When they next wake, all this derision
-Shall seem a dream and fruitless vision,
-And back to Athens shall the lovers wend,
-With league whose date till death shall never end.
-Whiles I in this affair do thee employ,
-I'll to my queen and beg her Indian boy;
-And then I will her charmed eye release
-From monster's view, and all things shall be peace.
-
-My fairy lord, this must be done with haste,
-For night's swift dragons cut the clouds full fast,
-And yonder shines Aurora's harbinger;
-At whose approach, ghosts, wandering here and there,
-Troop home to churchyards: damned spirits all,
-That in crossways and floods have burial,
-Already to their wormy beds are gone;
-For fear lest day should look their shames upon,
-They willfully themselves exile from light
-And must for aye consort with black-brow'd night.
-But we are spirits of another sort:
-I with the morning's love have oft made sport,
-And, like a forester, the groves may tread,
-Even till the eastern gate, all fiery-red,
-Opening on Neptune with fair blessed beams,
-Turns into yellow gold his salt green streams.
-But, notwithstanding, haste; make no delay:
-We may effect this business yet ere day.
-
-[Advancing] Welcome, good Robin.
-See'st thou this sweet sight?
-Her dotage now I do begin to pity:
-For, meeting her of late behind the wood,
-Seeking sweet favours from this hateful fool,
-I did upbraid her and fall out with her;
-For she his hairy temples then had rounded
-With a coronet of fresh and fragrant flowers;
-And that same dew, which sometime on the buds
-Was wont to swell like round and orient pearls,
-Stood now within the pretty flowerets' eyes
-Like tears that did their own disgrace bewail.
-When I had at my pleasure taunted her
-And she in mild terms begg'd my patience,
-I then did ask of her her changeling child;
-Which straight she gave me, and her fairy sent
-To bear him to my bower in fairy land.
-And now I have the boy, I will undo
-This hateful imperfection of her eyes:
-And, gentle Puck, take this transformed scalp
-From off the head of this Athenian swain;
-That, he awaking when the other do,
-May all to Athens back again repair
-And think no more of this night's accidents
-But as the fierce vexation of a dream.
-But first I will release the fairy queen.
-Be as thou wast wont to be;
-See as thou wast wont to see:
-Dian's bud o'er Cupid's flower
-Hath such force and blessed power.
-Now, my Titania; wake you, my sweet queen.
-"
-8,bp,"Fifteen years later, in 1980, Jintong emerges from prison in the far north, where he
-had herded sheep and performed oral sex under compulsion for a hairy prison guard,
-into a new and different China. Over is the Cultural Revolution; gone are the Red
-Guards; and no more is the Dalan Village that he had known. In their place is modern
-industrial China, a waste land of ill-conceived projects sped forward by avaricious
-entrepreneurs for whom the only object is money and to whom the past is nothing
-but a heap of rickety hovels and outmoded rural environs to be bull-dozed, along
-with their old inhabitants if necessary, and flattened into landfills to accommodate
-the latest factory, hotel, restaurant, or tourist trap. Lost and fearful of all around him
-in a bus station, Jintong is astonished to see Parrot Han, Laidi‚Äôs son by the Birdman,
-who is the ambitious proprietor of the Eastern Bird Sanctuary, a sort of avian zoo in
-the new Dalan City with a huge assortment of exotic birds. Parrot Han takes Jintong
-under his wing (!) and leads him home to see his now ancient, white-haired mother,
-Shangguan Lu, who has been evicted from the Shangguan compound, now annihilated
-by Progress, and has taken up residence in the hut near the abandoned pagoda on the
-outskirts of town. Mother Lu, the living embodiment of Chinese maternal authority,
-and the pagoda, signifying Taoism and Buddhism, China‚Äôs ancient traditions of folk
-wisdom, are thus brought together to be marginalized and destroyed at once by the
-modern machinery of Capital.
-Shangguan Lu‚Äôs eight daughters have all died, but she perseveres, despite her
-eviction, in the face of the monstrous and fantastic dissolution of the China she had
-known, a China fraught with danger, oppression, and natural disasters but for all that
-more humane than the shameful and disrespectful world of venal capitalism. Mother
-Lu is still a mother, and she nurses Jintong through a feverish illness and even welcomes Old Jin, the one-breasted goddess of the old Snow Market, to see him‚Äîa
-reunion that results in his total reversion to infantile dependency, as Jintong resorts
-to her still fulsome bosom and retreats into infancy to escape the noise and furor of
-the new China. Old Jin, though, has modernized; she is now the queen of trash and refuse, ruling with an iron hand a large company that recycles plastic and rubber. At
-length Shangguan Lu intervenes to stop her son‚Äôs awful regression and offers him an
-ultimatum, as Commander Long had done. He can have Old Jin as a lover, but not as
-a nursemaid: ‚ÄúI‚Äôve been a fool all these years, but I finally understand that it‚Äôs better
-to let a child die than let him turn into a worthless creature who can‚Äôt take his mouth
-away from a woman‚Äôs nipple!‚Äù (478).
-Thus Jintong is thrown into the onrushing river of modern life where predictably, he
-drowns. First, he is the kept sex toy of Old Jin, until she tosses him out when he fails
-to engage her drunken husband in a knife fight. Homeless again, he wanders into the
-clutches of Parrot Han‚Äôs famously vicious wife Geng Lianlian, who only wants him,
-bathed and properly attired, to persuade the Mayor of Dalan, his old music teacher and
-defender Ji Qiongzhi, to provide a huge loan for the enlargement of the Eastern Bird
-Sanctuary. And when she throws him out, since the loan is not forthcoming, Jintong
-descends into a dark night of the soul, wandering the back alleys of Dalan until he is
-mugged and stripped by a gang of thieves and narrowly escapes a pack of wild dogs,6
-only to throw himself desperately through the window of a new department store in
-pursuit of the breasts of the female mannequins and to discover, to his consternation,
-that ‚ÄúMy god, there‚Äôs no nipple!‚Äù (506).
-"
+5,high school,"With the development of the technology, more and more machines start to appear in our life. The invention of machines is rapidly developed. The concept of a thinking machine has been around for thousands of years and is something humans seem obsessed with - from the Greek myth of Pygmalion, a statue brought to life, through to the automata of Victorian society, we have long dreamed of putting human characteristics into machines.( Jane Wakefield. "" Intelligent machines: Will we accept robot revolution?"" 7 October 2015. Web. 8 January 2016.) Nowadays, machines play an important role in our lives, and some intelligent machines can help us to do something with sophisticated technologies. Machines influenced people very much, and their influences of people can be classified into three categories: increasing productivity, pushing development and avoiding dangers.
+Primarily, the machine can increase the productivity on some industries, and it is very helpful for human. The use of the machines increased our productivity rapidly, and the machines could replace human to do low-skill works more efficiently and accurate. For instance, in the first decade of the twentieth century, Ford, the pioneer in automobile industry, wanted to make cars affordable for every individual. The idea that everyone can afford a car seemed ridiculous to all people when Henry Ford first sought financial backing for making cars, the very notion of farmers and clerks owning automobiles was considered ridiculous. However, Ford was very clever to produce cars on assembly lines, so it greatly decreased consume and cost of the production, and the Ford’s dream came true. According this example, we can know that machines can increase the productivity, and it can decrease the cost, so it is beneficial for human to some extent."
+6,college,"“We need to move to a place with an elevator.”
+ 
+    I can’t remember how many times I heard my grandparents say these words. Our apartment was located on the top floor of a dilapidated building without an elevator in the oldest area of Beijing. For years, I saw my grandparents climb stairs with sweat on their backs and a sighs of tiredness. Over time, the simplest trips became extremely hard for them.
+ 
+    I was raised by my grandparents, both of whom were civil engineers. They designed and built buildings in Beijing. They proudly called themselves “home providers”. I looked at the tall buildings they pointed at and agreed, “Yes, they are home providers. Wherever they go is my home.” At age six, I moved to another city with my parents. Seeing the curious street views and listening to the different accents, I followed my parents who were as unfamliar as the city was to me. I wondered, “where is my home?”
+ 
+    “We really need to move,” my mother suggested. Our dining table filled with advertisements of different projects with prices highlighted: Six million! Ten million! I looked outside the window at buildings standing there as great monsters swallowing money. We couldn’t afford them. Are they worth it? Where will our home be? Suddenly, great monsters became huge cages built with concrete and steel – which reminded me something I saw before.
+ 
+I volunteered at a panda base during the summer. The pandas I saw before were quiet, staying in cages for people to observe. However, the ones I saw at the panda base were jumping, climbing, relaxing as no one watched. They had their own characters. I started to think: where is their “home” The cage we used to protect them, or mountains they came from? As people define“home” for pandas, what defines “home” for people? Economy? Society? Prices and values determine homes for people, not people themselves. 
+ 
+    Everyday, I see homeless people. When storms come, there is no roof over their head and no walls to protect them. I hear stories about people from near and far coming to Beijing, with dreams of finding their luck, earning better lives, but leaving with deep disappointment. They can’t stay because they have nowhere to settle in this busy city; People try to find homes here. What does “home” mean to them?
+ 
+    “People are always buying apartments. ”There is a market.” “There is no acknowledgment explaining the economic aspect of the Chinese housing industry.” Hearing this, it seemed to me that people didn’t care about housing prices. I started to find answers by looking up data from the National Bureau of Statistics, where I observed and compared housing prices to people’s average income for the past 6 years. I discovered that the housing price growth rate is far faster than the income growth rate. This happens because people crave buying apartments for investment and real property companies crave money.This must stop before housing prices so unrealistic that we lose our homes, and have to earn them back.
+ 
+Reflecting on my family, people on the streets, and pandas, I kept thinking: what is the real definition of home? It is hard to describe in one word. Home is our apartment; home is our identity; home is the world; home is responsibility; home is success; home is love. Home is a warm and important word for every creature, but not everyone can have a home, because of human interference, because of ridiculous housing prices. I am lucky to have a wonderful home, but it isn’t enough: homes are challenged, homes are lost. I desire to challenge the problem with my humble effort: researching and educating about housing prices. I believe, society should care about its people; people should care about each other. I hope, someday, knowing the real definition and having a wonderful home won’t be a dream but a fact for every creature living in this world."
+7,graduate,"Another interesting project was to add new features to an existing R package that was developed by our professor. After an overall evaluation, I decided to add two new features. The first feature is to run the original linear regression with a little bag of bootstraps parallel. Parallel computing was particularly useful in this case since we need to split the data and apply the same set of functions many times. Parallel computing is an effective technique to reduce the computational complexity. The second feature is to allow users to specify filenames instead of loading the analysis data. The purpose is to save running memory. In this step, I first formalized several datasets in CSV format to show. Then, I showed how the new data input worked. After adding the two features to this package, it can be implemented without a problem and the result is verified. 
+ 
+Besides those algorithm studies, I also had opportunities to develop fit-for-purpose statistical models to solve real-world problems by embarking on an internship as a marketing analyst intern at a biotech company based in Boston. In an effort to find a company domain for our target customers, I used the clear but autocomplete API to automatically tracking company’s URL using name. Then I utilized a concatemer function to generate a set of these requests of my sheet. Based on these data, I used Google Analytics to analyze the company and also generated several reports to provide strategic insights about whether the company will attract more customers or not each month. During this process, I found the appropriate data analytic skills will play midwife to help the company to meet the customers’ requirements and therefore lead to strategic improvements and eventually help increase the overall profit. 
+ 
+In conclusion, my strong quantitative background will give me a competitive advantage to thrive in your program. Coursework-wise, courses regarding probability, statistical inference and data analysis allowed me to develop a deep understanding of two fundamental methods underpinning the modern statistics, i.e. descriptive statistics and inferential statistics. By tapping into my solid mathematical foundation, I mastered an array of algorithms pertaining to machine learning and data mining, spanning supervised, unsupervised, reinforcement and deep learning. In my proposed program, I intend to concentrate on the application of statistics in data science. Upon graduation, I wish to pursue a career in a tech company as a data analyst. The Master’s program at the your university is based on a set of well-balanced curriculum that not only teaches students the mathematical theories but also the applications into the real world, which matches my future career goals. Besides, this program is home to a group of world-class scholars, whose solid academic background and close connection with industry will make my academic journey there exceptionally fulfilling. I am convinced this program offers me precious opportunities to accomplish my career goals in statistics."
+,,
