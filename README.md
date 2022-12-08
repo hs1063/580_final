@@ -298,6 +298,5 @@ features to provide students with detailed feedback on their writing. We
 believe this study will become a useful tool for ESL students to improve
 their writing abilities and succeed in their academic studies.
 
-![Table Description automatically
-generated](media/image17.jpeg){width="6.5in" height="2.66875in"}
-## Results (maybe a table or something)
+![](media/image17.jpeg){width="6.5in" height="2.66875in"}
+
