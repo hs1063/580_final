@@ -21,12 +21,14 @@ other aspects. However, current auto-feedback systems need to be better
 suited for evaluating the writing of English as a Second Language (ESL)
 students. In this study, we aim to develop an effective model for
 assessing the writing skills of ESL students in grades 8-12.
+
 ![](https://github.com/hs1063/580_final/blob/main/imgs/img/image001.png)
 The dataset used in this study consists of two parts: a training set
 with 3911 student essays and scores in six different areas (cohesion,
 syntax, vocabulary, phraseology, grammar, and conventions), and a test
 set with three student essays, two book passages, and three essays
 written by our group members.
+
 ![](https://github.com/hs1063/580_final/blob/main/imgs/img/image003.png)
 The accompanying distribution figure shows the length of essays written
 by ESL students in grades 8-12. The distribution is slightly skewed to
@@ -53,7 +55,6 @@ then used a correlation matrix to see whether there was a correlation
 between the types of words used and the six scores. However, no
 significant correlation was found, so these factors were not included in
 the model architecting process.
-
 
 
 ![](https://github.com/hs1063/580_final/blob/main/imgs/img/image008.png)
@@ -150,8 +151,6 @@ method may not be effective for predicting syntax and grammar ability.
 We will need to explore other methods to increase the accuracy of our
 model.
 
-![](https://github.com/hs1063/580_final/blob/main/imgs/img/image016.png)
-
 We also tried using the n-gram method with the Conv1d algorithm and the
 multi-Roberta method with the SVR algorithm. For each combination, we
 used the k-fold method with k = 5 to evaluate the model\'s performance
@@ -181,6 +180,8 @@ the results of using two, three, and four layers. Average pooling was
 used in the middle of the two layers to improve the results. The model
 also uses four dense layers, with each layer having half the size of the
 previous one to increase accuracy.
+
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image016.png)
 
 Conv1d layers are a type of convolutional layer often used in natural
 language processing and time series analysis. They apply a convolution
