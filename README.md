@@ -3,12 +3,12 @@
 #### Authors: Yudi Chen (yc1000); Xinyue Ji (xj82); Hanjing Shi (hs1063); Ke Shi (ks1837)
 
 ## Introduction of Github
-code: this folder includes all Python files for EDA, model architecture, and evaluation
-data: this folder includes all datasets that we utilized in the research
-img: all pictures that generated from the research process and be utilized in the analysis presentation and report
-test_result: test dataset with predicted scores
-validation_result: validation dataset with predicted scores
-The presentation slides and reports (README.md) are inlcuded
+<br>code: this folder includes all Python files for EDA, model architecture, and evaluation
+<br>data: this folder includes all datasets that we utilized in the research
+<br>img: all pictures that generated from the research process and be utilized in the analysis presentation and report
+<br>test_result: test dataset with predicted scores
+<br>validation_result: validation dataset with predicted scores
+<br>The presentation slides and reports (README.md) are inlcuded
 
 ## Methodology utilized
 **Introduction and EDA**
