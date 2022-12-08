@@ -36,7 +36,7 @@ all six areas, is bimodal, with peaks at around 16.5 and 20. The mean
 total score is approximately 18.5, indicating that the average score in
 each area falls between 2.75 and 3.33.
 
-![](media/image2.png){width="6.5in" height="1.4583333333333333in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image002.png){width="6.5in" height="1.4583333333333333in"}
 
 To better understand how scores are assigned to individual students, we
 explored the diversity of word usage in each essay using the
@@ -47,9 +47,9 @@ between the types of words used and the six scores. However, no
 significant correlation was found, so these factors were not included in
 the model architecting process.
 
-![](media/image3.png){width="6.5in" height="2.986111111111111in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image003.png){width="6.5in" height="2.986111111111111in"}
 
-![](media/image4.jpg){width="6.5in" height="3.3055555555555554in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image004.png){width="6.5in" height="3.3055555555555554in"}
 
 To accurately reflect the efficiency of our models, we randomly split
 20% of our data as our validation set and calculated relative measures
@@ -62,7 +62,7 @@ generalized use. By predicting the scores for these passages, we aimed
 to see whether the model could be used for higher education or essays
 written by native English speakers.
 
-![](media/image5.png){width="6.5in" height="1.8888888888888888in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image005.png){width="6.5in" height="1.8888888888888888in"}
 
 To prevent biases, the input for this study was the raw student essays.
 We used several natural language processing (NLP) methods, including
@@ -72,7 +72,7 @@ the MCRMSE to measure their accuracy, with lower numbers indicating
 better performance. Since we used four models, we took the average of
 the final results to calculate the overall accuracy.
 
-![](media/image6.jpg){width="6.5in" height="2.361111111111111in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image006.png){width="6.5in" height="2.361111111111111in"}
 
 To further improve the accuracy of our models, we used the k-fold
 method, which divides the dataset into k smaller sets. We found that
@@ -82,7 +82,7 @@ ensuring that each data point is used for training and testing. This
 reduces the likelihood of overfitting and increases the generalizability
 of the model.
 
-![](media/image7.jpg){width="5.031602143482065in"
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image007.png){width="5.031602143482065in"
 height="3.4218755468066493in"}
 
 **TF-IDF method for text vectorization with the SVM algorithm for
@@ -100,13 +100,13 @@ regularization parameter \"c\", the \"epsilon\" value for the
 epsilon-tube, and the \"gamma\" value for the kernel coefficient. We
 used the default \"RBF\" kernel.
 
-![](media/image8.jpg){width="6.5in" height="2.6527777777777777in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image008.png){width="6.5in" height="2.6527777777777777in"}
 
 The score of the MCRMSE for this model was 0.58, which is not
 particularly good. This suggests that the combination of TF-IDF and SVR
 may not be the most effective for this dataset and task.
 
-![](media/image9.jpg){width="6.5in" height="1.2777777777777777in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image009.png){width="6.5in" height="1.2777777777777777in"}
 
 After evaluating the results of the TF-IDF with SVR model, we found that
 the third student in the dataset had the best results. By comparing this
@@ -118,7 +118,7 @@ as the student\'s overall writing style or the specific vocabulary they
 used, may have contributed to the model\'s performance. Further analysis
 would be needed to confirm these observations.
 
-![](media/image10.jpg){width="6.5in" height="3.1527777777777777in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image010.png){width="6.5in" height="3.1527777777777777in"}
 
 After analyzing the results of the TF-IDF with the SVR model, we found a
 weak correlation between the TF-IDF scores and the grammar scores of the
@@ -144,7 +144,7 @@ method may not be effective for predicting syntax and grammar ability.
 We will need to explore other methods to increase the accuracy of our
 model.
 
-![](media/image11.jpg){width="6.5in" height="1.0555555555555556in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image011.png){width="6.5in" height="1.0555555555555556in"}
 
 We also tried using the n-gram method with the Conv1d algorithm and the
 multi-Roberta method with the SVR algorithm. For each combination, we
@@ -197,7 +197,7 @@ which each neuron receives input from all the neurons in the previous
 layer. By reducing the size of each layer, the model can learn more
 complex patterns without overfitting to the training data.
 
-![](media/image12.png){width="3.386619641294838in"
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image012.png){width="3.386619641294838in"
 height="7.1528040244969375in"}
 
 The results of the Conv1D with bi-gram model are similar to those of the
@@ -209,7 +209,7 @@ be more effective for this dataset and task than the TF-IDF with SVR
 combination. Further analysis and experimentation would be needed to
 confirm this.
 
-![](media/image13.jpg){width="6.5in" height="1.2638888888888888in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image013.png){width="6.5in" height="1.2638888888888888in"}
 
 **Multi-Robot Model with SVR Algorithm**
 
@@ -231,7 +231,7 @@ study, mean pooling was found to be more effective than max pooling and
 mean square root length pooling because it allowed more information to
 be retained without altering the content of the essay.
 
-![](media/image14.jpg){width="6.5in" height="2.611111111111111in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image014.png){width="6.5in" height="2.611111111111111in"}
 
 To improve the precision of the multi-roberta model, Huber Loss was
 selected as the loss function. Huber Loss combines the benefits of
@@ -251,7 +251,7 @@ for the second student\'s phraseology and grammar compared to the other
 students. This is likely due to the fact that the second student\'s
 essay was the shortest and contained the fewest adjectives and adverbs.
 
-![](media/image15.jpg){width="6.5in" height="1.1388888888888888in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image015.png){width="6.5in" height="1.1388888888888888in"}
 
 **Conclusion**
 
@@ -281,7 +281,7 @@ higher scores indicating that the text can be understood by readers with
 a higher level of education. These scores can be used to evaluate the
 overall quality of the writing.
 
-![](media/image16.png){width="6.5in" height="1.5694444444444444in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image016.png){width="6.5in" height="1.5694444444444444in"}
 
 Our model and the \"textstat\" results both indicate that the second
 text has the lowest grade level and may be the most difficult to
@@ -298,5 +298,5 @@ features to provide students with detailed feedback on their writing. We
 believe this study will become a useful tool for ESL students to improve
 their writing abilities and succeed in their academic studies.
 
-![](media/image17.jpeg){width="6.5in" height="2.66875in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image017.png){width="6.5in" height="2.66875in"}
 
