@@ -9,7 +9,7 @@
 <br>test_result: test dataset with predicted scores
 <br>validation_result: validation dataset with predicted scores
 <br>The presentation slides and reports (README.md) are inlcuded
-<br>***All code for model architecture needed to be run with GPU and TPU.
+<br>***All code for model architecture needed to be run with GPU and TPU***
 
 ## Methodology utilized
 **Introduction and EDA**
