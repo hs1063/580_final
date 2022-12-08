@@ -124,7 +124,7 @@ would be needed to confirm these observations.
 
 ![](https://github.com/hs1063/580_final/blob/main/imgs/img/image013.jpg)
 
-** TF-IDF Model with ANN (Artificial Neural Networks)
+**TF-IDF Model with ANN (Artificial Neural Networks)**
 After analyzing the results of the TF-IDF with the SVR model, we found a
 weak correlation between the TF-IDF scores and the grammar scores of the
 students. This suggests that the use of the TF-IDF method alone may not
