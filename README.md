@@ -26,7 +26,7 @@ by ESL students in grades 8-12. The distribution is slightly skewed to
 the right, with a mean length of approximately 440 words. This suggests
 that few of the 3911 essays are particularly long.
 
-![](media/image1.png){width="6.5in" height="2.9583333333333335in"}
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image001.png){width="6.5in" height="2.9583333333333335in"}
 
 In this study, we have visualized the score distributions for six
 different areas of writing ability. These distributions are generally
