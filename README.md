@@ -90,7 +90,6 @@ ensuring that each data point is used for training and testing. This
 reduces the likelihood of overfitting and increases the generalizability
 of the model.
 
-![](https://github.com/hs1063/580_final/blob/main/imgs/img/image012.jpg)
 
 **TF-IDF method for text vectorization with the SVM algorithm for
 regression**
@@ -107,13 +106,11 @@ regularization parameter \"c\", the \"epsilon\" value for the
 epsilon-tube, and the \"gamma\" value for the kernel coefficient. We
 used the default \"RBF\" kernel.
 
-![](https://github.com/hs1063/580_final/blob/main/imgs/img/image013.jpg)
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image012.jpg)
 
 The score of the MCRMSE for this model was 0.58, which is not
 particularly good. This suggests that the combination of TF-IDF and SVR
 may not be the most effective for this dataset and task.
-
-![](https://github.com/hs1063/580_final/blob/main/imgs/img/image014.jpg)
 
 After evaluating the results of the TF-IDF with SVR model, we found that
 the third student in the dataset had the best results. By comparing this
@@ -125,8 +122,9 @@ as the student\'s overall writing style or the specific vocabulary they
 used, may have contributed to the model\'s performance. Further analysis
 would be needed to confirm these observations.
 
-![](https://github.com/hs1063/580_final/blob/main/imgs/img/image015.jpg)
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image013.jpg)
 
+** TF-IDF Model with ANN (Artificial Neural Networks)
 After analyzing the results of the TF-IDF with the SVR model, we found a
 weak correlation between the TF-IDF scores and the grammar scores of the
 students. This suggests that the use of the TF-IDF method alone may not
@@ -137,6 +135,8 @@ with using the ANN (artificial neural network) algorithm for regression.
 This resulted in an MCRMSE score of 0.51, which is better than the score
 obtained with the SVR algorithm.
 
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image014.jpg)
+
 For the simple ANN, we used three layers. The first layer had 64 units
 and used the SoftMax activation function, while the second layer had 32
 units and used the same activation function. The output layer had six
@@ -145,6 +145,8 @@ the TF-IDF with a simple ANN model showed that the third student still
 had the best results among the three students. However, the worst scores
 for the first and third students shifted from grammar to syntax, while
 the worst score for the second remained in grammar.
+
+![](https://github.com/hs1063/580_final/blob/main/imgs/img/image015.jpg)
 
 Overall, the results of the SVR and ANN models suggest that the TF-IDF
 method may not be effective for predicting syntax and grammar ability.
